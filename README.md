@@ -2,12 +2,12 @@
 
 Feuille de style personnalisée du site Squarespace de **Big Company**
 (<https://www.bigcompany.fr>), telle qu'elle était en 2016. Le fichier
-`styles.css` était collé dans le panneau « Custom CSS » de Squarespace : il
+`styles.less` était collé dans le panneau « Custom CSS » de Squarespace : il
 redéfinit la navigation, la typographie, la grille de galerie du portfolio, le
 bouton « Demoreel », les formulaires et le pied de page du template.
 
 **Année de réalisation / livraison : 2016.**
-Les polices et images référencées dans `styles.css` ont été mises en ligne sur
+Les polices et images référencées dans `styles.less` ont été mises en ligne sur
 les assets Squarespace du site les 28 et 29 novembre 2016 (timestamps des URLs).
 Le premier commit git (2026-09-06) correspond à l'archivage du fichier.
 
@@ -16,7 +16,8 @@ Le premier commit git (2026-09-06) correspond à l'archivage du fichier.
 
 ## Contenu
 
-- `styles.css` — feuille de style unique. Contient :
+- `styles.less` — feuille de style unique (syntaxe LESS ; extension `.css`
+  d'origine, le panneau Squarespace étant intitulé « Custom CSS »). Contient :
   - deux `@font-face` pour la police `Gotham` (Book 400, Bold 700), chargée
     depuis les assets Squarespace du site ;
   - la barre de navigation mobile (`#sidecarNav`, `#titres`,
@@ -35,7 +36,8 @@ Le premier commit git (2026-09-06) correspond à l'archivage du fichier.
 - Personnalisation d'un site **Squarespace**. Le template Squarespace lui-même
   n'est pas dans le repo ; ce fichier ne fonctionne qu'injecté dans ce site.
 - Syntaxe **LESS** (règles imbriquées, sélecteur parent `&`) telle que
-  supportée par l'éditeur CSS de Squarespace, qui compile la feuille.
+  supportée par l'éditeur CSS de Squarespace, qui compile la feuille. Le
+  fichier n'est donc pas du CSS valide en l'état.
 - Police **Gotham** (Book, Bold) servie via `@font-face` depuis
   `static1.squarespace.com/static/583411bd725e25d98aacd19f/…`.
 - Sélecteurs ciblant les composants Squarespace : `#sidecarNav`,
@@ -53,10 +55,10 @@ Il n'y a pas de build local. Le circuit est :
 
 ```sh
 # éditer la feuille
-$EDITOR styles.css
+$EDITOR styles.less
 
 # puis, dans Squarespace : Design → Custom CSS
-# coller l'intégralité de styles.css et enregistrer
+# coller l'intégralité de styles.less et enregistrer
 ```
 
 Notes de configuration :
